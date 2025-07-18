@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>ASCII Art Web</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #f0f0f0;
+            padding: 40px;
+            text-align: center;
+        }
+        form {
+            background: white;
+            display: inline-block;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        pre {
+            background: #272822;
+            color: #f8f8f2;
+            padding: 20px;
+            text-align: left;
+            margin-top: 30px;
+            white-space: pre-wrap;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎨 ASCII Art Web</h1>
+
+    <form method="POST" action="/ascii-art">
+
+        <textarea type="text" name="text" placeholder="Entrez votre texte" required></textarea><br>
+        <br>
+
+
+        <label><input type="radio" name="banner" value="standard" checked> Standard</label>
+        <label><input type="radio" name="banner" value="shadow"> Shadow</label>
+        <label><input type="radio" name="banner" value="thinkertoy"> Thinkertoy</label><br><br>
+
+        <button type="submit">Générer</button>
+    </form>
+
+    <!-- 👇 Affiche le résultat ascii -->
+    
+    {{if .Result}}
+        <h2>Résultat ASCII :</h2>
+        <pre>{{.Result}}</pre>
+    {{end}}
+</body>
+</html>
