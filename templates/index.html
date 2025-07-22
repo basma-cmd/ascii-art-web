@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AsciiArt</title>
+    <link rel="shortcut icon" href="https://cdn-icons-png.freepik.com/512/9207/9207483.png" type="image/png">
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #f0f0f0;
+            padding: 40px;
+            text-align: center;
+        }
+
+        form {
+            background: white;
+            display: inline-block;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .err{
+            font-size: small;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <h1>🎨 ASCII Art Web</h1>
+    <div>
+        <form method="POST" action="/">
+
+            <textarea style="resize: none;" type="text" name="input" placeholder="Entrez votre texte" maxlength="200" required></textarea><br>
+            <br>
+            <label><input type="radio" name="banner" value="standard" checked> Standard</label>
+            <label><input type="radio" name="banner" value="shadow"> Shadow</label>
+            <label><input type="radio" name="banner" value="thinkertoy"> Thinkertoy</label><br><br>
+
+            <button type="submit">Submit</button>
+        </form>
+        <br><br>
+        <p class="err">{{.Error}}</p>
+        
+    </div>
+</body>
+
+</html>

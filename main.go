@@ -1,16 +1,15 @@
 package main
 
 import (
-	"asciiartweb/server"
-	"fmt"
+	"log"
 	"os"
+
+	"artweb/server"
 )
 
 func main() {
 	if len(os.Args) != 1 {
-		fmt.Println("No Arguments needed (:")
-		return
+		log.Fatal("too many arguments!")
 	}
-	// start server 
-	server.StartServer()
+	server.Server()
 }
